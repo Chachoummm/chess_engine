@@ -16,25 +16,9 @@ import pandas as pd
 import numpy as np
 from sklearn.utils import shuffle
 
-'''
-path_fischer = '/content/chess-games-dataset/Data/CSV_FISCHER'
-path_morphy = '/content/chess-games-dataset/Data/CSV_MORPHY'
-path_capablanca = '/content/chess-games-dataset/Data/CSV_CAPABLANCA'
-
-files_fischer = glob.glob(path_fischer + "/*.csv")
-#files_morphy = glob.glob(path_morphy + "/*.csv")
-#files_capablanca = glob.glob(path_capablanca + "/*.csv")
-
-            
-li = []
-
-for filename in files_fischer:
-    df = pd.read_csv(filename, index_col=None, header=0)
-    li.append(df)
-'''
-'''
+# comme c'est trop lourd c'est pas sur github donc le modèle a été entrainé en local et puis on y a fait appel sur colab à partir de Github
 train = pd.read_csv('filtered_2100_ranking.csv', index_col=None, header=0)
-#train = pd.concat(li, axis=0, ignore_index=True)
+
 
 train = shuffle(train)
 
@@ -120,7 +104,7 @@ serving_input_fn = tf.estimator.export.build_parsing_serving_input_receiver_fn(
 
 estimator_base_path = '/Users/charlottemaistriau/Downloads'
 estimator_path = linear_est.export_saved_model(estimator_base_path, serving_input_fn)
-'''
+
 ##Python Chess Engine ♟️
 #libraries
 
